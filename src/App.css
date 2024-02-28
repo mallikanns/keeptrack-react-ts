@@ -1,0 +1,8 @@
+header {
+  height: 5.1875rem;
+  /* height: 50px; */
+}
+
+a.button.active {
+  border: 1px solid var(--fore-color);
+}
