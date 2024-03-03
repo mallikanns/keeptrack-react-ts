@@ -3,7 +3,6 @@ import ProjectList from "./ProjectList";
 import { Project } from "./Project";
 import { projectAPI } from "./projectAPI";
 
-
 function ProjectsPage() {
   const [projects, setProjects] = useState<Project[]>([]);
   const [loading, setLoading] = useState(false);
@@ -11,7 +10,7 @@ function ProjectsPage() {
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    async function loadProject() {
+    async function loadProjects() {
       setLoading(true);
       try {
         const data = await projectAPI.get(currentPage);
@@ -29,7 +28,7 @@ function ProjectsPage() {
         setLoading(false);
       }
     }
-    loadProject();
+    loadProjects();
   }, [currentPage]);
 
   const saveProject = (project: Project) => {
